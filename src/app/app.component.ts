@@ -5,9 +5,6 @@ import { RouterOutlet } from '@angular/router';
   selector: 'cybercomplaint-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `<router-outlet/>`,
 })
-export class AppComponent {
-  title = 'CyberComplaint';
-}
+export class AppComponent {}

@@ -1,0 +1,26 @@
+.error{
+    @apply flex flex-col gap-2 items-center justify-center w-screen h-screen text-white;
+    background: linear-gradient(-45deg, var(--primary-500), var(--green-500), var(--teal-400), var(--cyan-400));
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+
+    h1{
+        @apply text-9xl font-extrabold;
+    }
+
+    h2{
+        @apply text-3xl font-semibold;
+    }
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}

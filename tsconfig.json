@@ -5,6 +5,12 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "strict": true,
+    "paths": {
+      "@components/*": ["./src/app/components/*"],
+      "@model/*": ["./src/app/model/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@interceptors/*": ["./src/app/interceptors/*"],
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

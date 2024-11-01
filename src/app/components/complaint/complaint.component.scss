@@ -1,0 +1,38 @@
+@use "styles/wrapper.scss";
+
+.wrapper{
+    @apply items-center
+}
+
+.header{
+    @apply flex flex-col gap-2 self-center text-center;
+    
+    h1{
+        @apply text-3xl font-extrabold;
+    }
+    h2{
+        @apply text-xl font-semibold;
+    }
+}
+
+form{
+    @apply self-center grid gap-5 w-full my-auto justify-items-center  md:grid-cols-2 lg:grid-cols-3 lg:px-32;
+    ;
+
+    .form-item{
+        @apply w-full;
+    }
+    .textarea{
+        @apply w-full;
+        grid-column: 1/-1;
+        textarea{
+            @apply w-full;
+        }
+    }
+
+    ::ng-deep{
+        input{
+            @apply w-full;
+        }
+    }
+}

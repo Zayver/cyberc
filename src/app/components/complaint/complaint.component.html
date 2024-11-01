@@ -1,0 +1,52 @@
+<cybercomplaint-frame>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Formulario para el registro de la denuncia</h1>
+            <h2>Llena el siguiente formulario para proceder con la denuncia judicial</h2>
+        </div>
+
+        <form [formGroup]="this.complaintForm">
+            <div class="form-item">
+                <h1>Nombre</h1>
+                <input type="text" pInputText formControlName="name">
+            </div>
+
+            <div class="form-item">
+                <h1>Segundo nombre</h1>
+                <input type="text" pInputText formControlName="secondName">
+            </div>
+
+            <div class="form-item">
+                <h1>Apellido</h1>
+                <input type="text" pInputText formControlName="surName">
+            </div>
+
+            <div class="form-item">
+                <h1>Segundo apellido</h1>
+                <input type="text" pInputText formControlName="secondSurName">
+            </div>
+
+            <div class="form-item">
+                <h1>Celular</h1>
+                <p-inputMask mask="9999999999" formControlName="cellphone"/>
+            </div>
+
+            <div class="form-item">
+                <h1>Email</h1>
+                <input type="text" pInputText formControlName="email">
+            </div>
+
+            <div class="form-item">
+                <h1>Cédula</h1>
+                <input type="text" pInputText formControlName="cc"/>
+            </div>
+
+            <div class="form-item textarea">
+                <h1>Descripción</h1>
+                <textarea type="text" pInputTextarea formControlName="description" [autoResize]="true"> </textarea>
+            </div>
+
+        </form>
+        <p-button label="Enviar" [disabled]="this.complaintForm.invalid" (onClick)="this.sendComplaint()"></p-button>
+    </div>
+</cybercomplaint-frame>
