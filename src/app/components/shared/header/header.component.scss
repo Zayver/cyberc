@@ -2,5 +2,5 @@
     @apply block sticky top-0 z-50 w-screen left-0;
 }
 header{
-    @apply flex gap-1 h-16 w-full bg-[var(--primary-500)] shadow-lg sticky top-0 z-50 p-4 items-center self-start;
+    @apply flex gap-1 h-16 w-full bg-[var(--p-primary-500)] shadow-lg sticky top-0 z-50 p-4 items-center self-start;
 }

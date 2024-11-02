@@ -32,9 +32,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/primeng/resources/themes/aura-light-lime/theme.css",
-              "node_modules/primeng/resources/primeng.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -116,5 +114,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
