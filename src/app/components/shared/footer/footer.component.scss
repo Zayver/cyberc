@@ -1,3 +1,7 @@
 footer{
-    @apply flex flex-col mt-auto items-center h-20 bg-[var(--p-primary-200)] p-4;
+    @apply flex mt-auto items-center justify-center bg-[var(--primary-200)] p-4 h-full;
+}
+
+.footer{
+    @apply flex flex-col gap-2 justify-center text-center text-[var(--text-color-secondary)];
 }

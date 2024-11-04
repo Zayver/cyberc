@@ -1,5 +1,4 @@
-export interface CreateComplaintRequest{
-    type: 0
+export interface CreateComplaintRequest {
     name: string
     secondName: string
     surName: string

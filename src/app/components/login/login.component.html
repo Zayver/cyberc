@@ -1,0 +1,16 @@
+<cybercomplaint-frame>
+    <div class="wrapper">
+        <div class="card">
+            <span class="rounded-full p-2 border-gray-300 border-4 w-auto h-fit border-dotted">
+                <ng-icon size="5rem" name="lucideKeyRound"></ng-icon>
+            </span>
+
+            <h1>Inicio de sesión</h1>
+            <form [formGroup]="this.loginForm" (ngSubmit)="this.login()">
+                <input type="text" pInputText formControlName="username" placeholder="Usuario">
+                <p-password formControlName="password" placeholder="Contraseña" [feedback]="false" [toggleMask]="true"/>
+                <p-button type="submit" label="Ingresar" [loading]="this.loading()" [disabled]="this.loginForm.invalid"></p-button>
+            </form>
+        </div>
+    </div>
+</cybercomplaint-frame>

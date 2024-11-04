@@ -16,8 +16,7 @@
 }
 
 form{
-    @apply self-center grid gap-5 w-full my-auto justify-items-center  md:grid-cols-2 lg:grid-cols-3 lg:px-32;
-    ;
+    @apply self-center grid gap-5 w-full my-auto justify-items-center  md:grid-cols-2 lg:grid-cols-3 lg:px-32;;
 
     .form-item{
         @apply w-full;
@@ -35,4 +34,23 @@ form{
             @apply w-full;
         }
     }
+}
+.panel{
+    @apply flex flex-col gap-3 p-2 shadow-md rounded-lg;
+}
+.types{
+    @apply flex gap-4 flex-wrap p-2 justify-center;
+}
+
+.card{
+    @apply flex flex-col p-5 gap-3 items-center justify-center rounded-lg;
+}
+
+.card-selectable{
+    @extend .card;
+    @apply shadow-lg cursor-pointer hover:scale-105 hover:bg-[var(--primary-400)];
+}
+
+.buttons{
+    @apply flex gap-2 self-center;
 }

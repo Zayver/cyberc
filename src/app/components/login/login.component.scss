@@ -1,0 +1,18 @@
+@use "styles/wrapper.scss";
+
+.wrapper{
+    @apply justify-center items-center;
+}
+.card{
+    @apply flex flex-col p-4 gap-3 shadow-lg items-center justify-center rounded-md w-fit h-96;
+}
+
+form{
+    @apply flex flex-col items-center gap-2;
+}
+
+::ng-deep{
+    input{
+        @apply w-72;
+    }
+}
