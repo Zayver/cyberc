@@ -10,17 +10,17 @@ export const routes: Routes = [
             {
                 path: '',
                 loadComponent: () => import('@components/user/home/home.component').then(m => m.HomeComponent),
-                title: 'Inicio - CyberDenuncias'
+                title: 'Inicio - ProjectLaw'
             },
             {
                 path: 'complaint',
                 loadComponent: () => import('@components/user/complaint/complaint.component').then(m => m.ComplaintComponent),
-                title: 'Realizar denuncia - CyberDenuncias'
+                title: 'Realizar denuncia - ProjectLaw'
             },
             {
                 path: 'consult',
                 loadComponent: () => import('@components/user/consult-complaint/consult-complaint.component').then(m => m.ConsultComplaintComponent),
-                title: 'Consultar denuncia - CyberDenuncias'
+                title: 'Consultar denuncia - ProjectLaw'
             },
         ]
     },
@@ -30,7 +30,7 @@ export const routes: Routes = [
         path: 'login',
         canActivate: [loginGuard],
         loadComponent: () => import('@components/login/login.component').then(m => m.LoginComponent),
-        title: "Iniciar sesión - CyberDenuncias"
+        title: "Iniciar sesión - ProjectLaw"
     },
     {
         path: 'admin',
@@ -45,12 +45,12 @@ export const routes: Routes = [
             {
                 path: 'complaints',
                 loadComponent: () => import('@components/admin/list-complaints/list-complaints.component').then(m => m.ListComplaintsComponent),
-                title: 'Listado de denuncias - CyberDenuncias'
+                title: 'Listado de denuncias - ProjectLaw'
             },
             {
                 path: 'complaints/:id',
                 loadComponent: () => import('@components/admin/complaint-id/complaint-id.component').then(m => m.ComplaintIdComponent),
-                title: 'Administrar denuncia - CyberDenuncias'
+                title: 'Administrar denuncia - ProjectLaw'
             }
         ]
     },
