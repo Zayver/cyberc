@@ -54,3 +54,14 @@ form{
 .buttons{
     @apply flex gap-2 self-center;
 }
+
+.end-panel {
+    @extend .panel;
+    @apply text-center;
+    h2{
+        @apply font-bold text-xl;
+    }
+    h1 {
+        @apply font-extrabold text-4xl;
+    }
+}

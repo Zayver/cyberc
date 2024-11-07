@@ -1,0 +1,98 @@
+<div class="wrapper">
+    <div class="header">
+        <h1>Formulario para el registro de la denuncia</h1>
+        <h2>Llena el siguiente formulario para proceder con la denuncia judicial</h2>
+    </div>
+
+    <p-stepper [linear]="true" class="md:w-[80%] w-full">
+        <p-stepperPanel header="Tipo de denuncia">
+            <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+                <div class="panel">
+                    <div class="types">
+                        @for (complaint of this.getComplaintTypes(); track $index) {
+                        <div class="card-selectable" (click)="this.selectType(nextCallback, complaint[0])">
+                            <ng-icon size="2.5rem" [name]="complaint[1].icon"></ng-icon>
+                            <h1>{{complaint[1].display}}</h1>
+                            <!-- Description? -->
+                        </div>
+                        }
+
+                    </div>
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+        <p-stepperPanel header="Información">
+            <ng-template pTemplate="content" let-nextCallback="nextCallback" let-prevCallback="prevCallback">
+                <div class="panel">
+                    @let complaint = this.getComplaintTypes()[this.complaintForm.get('type')?.value];
+                    <div class="card">
+                        <ng-icon size="2.5rem" [name]="complaint[1].icon"></ng-icon>
+                        <h1>{{complaint[1].display}}</h1>
+                        <!-- Description? -->
+                    </div>
+                    <h3 class="self-center">Los campos con * son requeridos</h3>
+                    <form [formGroup]="this.complaintForm">
+                        <div class="form-item">
+                            <h1>Nombre*</h1>
+                            <input type="text" pInputText formControlName="name">
+                        </div>
+
+                        <div class="form-item">
+                            <h1>Segundo nombre</h1>
+                            <input type="text" pInputText formControlName="secondName">
+                        </div>
+
+                        <div class="form-item">
+                            <h1>Apellido*</h1>
+                            <input type="text" pInputText formControlName="surName">
+                        </div>
+
+                        <div class="form-item">
+                            <h1>Segundo apellido*</h1>
+                            <input type="text" pInputText formControlName="secondSurName">
+                        </div>
+
+                        <div class="form-item">
+                            <h1>Celular*</h1>
+                            <p-inputMask mask="9999999999" formControlName="cellphone" />
+                        </div>
+
+                        <div class="form-item">
+                            <h1>Email*</h1>
+                            <input type="text" pInputText formControlName="email">
+                        </div>
+
+                        <div class="form-item">
+                            <h1>Cédula*</h1>
+                            <input type="text" pInputText formControlName="cc" pKeyFilter="int" />
+                        </div>
+
+                        <div class="form-item textarea">
+                            <h1>Descripción*</h1>
+                            <textarea pInputTextarea formControlName="description" [autoResize]="true"> </textarea>
+                        </div>
+
+                    </form>
+
+                    <div class="buttons">
+                        <p-button label="Volver" class="self-start" (onClick)="prevCallback.emit()"></p-button>
+                        <p-button label="Enviar" [disabled]="this.complaintForm.invalid"
+                            (onClick)="this.sendComplaint(nextCallback)" [loading]="this.loading()"
+                            class="self-end"></p-button>
+                    </div>
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+
+        <p-stepperPanel header="Finalizar">
+            <ng-template pTemplate="content">
+                <div class="end-panel">
+                    <h2>La denuncia se creó con éxito</h2>
+                    <h3>Podrás consultarla con el siguiente identificador, guárdalo, solo se mostrará esta vez</h3>
+                    <h1>{{this.id}}</h1>
+                    <p-button label="Inicio" [routerLink]="['/']"></p-button>
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+    </p-stepper>
+</div>

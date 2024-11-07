@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button'
 @Component({
   selector: 'cybercomplaint-home',
   standalone: true,
-  imports: [FrameComponent, ButtonModule, RouterLink],
+  imports: [ButtonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

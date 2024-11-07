@@ -1,0 +1,56 @@
+<div class="wrapper">
+    @if (this.complaint$ | async; as complaint) {
+        <div class="card">
+            <div class="complaint-info">
+                <div class="info-item type alone">
+                    @let type = this.getComplaintInfo(complaint.type);
+                    <ng-icon size="2.5rem" [name]="type.icon"></ng-icon>
+                    <h1>{{type.display}}</h1>
+                </div>
+                @let status = this.getComplaintStatus(complaint.status);
+                <div class="alone status" [ngClass]="status.class">
+                    <h1>{{status.display}}</h1>
+                    <ng-icon [name]="status.icon"></ng-icon>
+                </div>
+                <div class="info-item">
+                    <h1>Nombre</h1>
+                    <h2>{{complaint.name}}</h2>
+                </div>
+                @if (complaint.secondName) {
+                    <div class="info-item">
+                        <h1>Segundo nombre</h1>
+                        <h2>{{complaint.secondName}}</h2>
+                    </div>
+                }
+                <div class="info-item">
+                    <h1>Apellido</h1>
+                    <h2>{{complaint.surName}}</h2>
+                </div>
+                <div class="info-item">
+                    <h1>Segundo apellido</h1>
+                    <h2>{{complaint.secondName}}</h2>
+                </div>
+                <div class="info-item">
+                    <h1>Documento</h1>
+                    <h2>{{complaint.cc}}</h2>
+                </div>
+                <div class="info-item">
+                    <h1>Correo</h1>
+                    <h2>{{complaint.email}}</h2>
+                </div>
+                <div class="info-item">
+                    <h1>Celular</h1>
+                    <h2>{{complaint.cellphone}}</h2>
+                </div>
+                <div class="description alone self-start">
+                    <h1>Descripción</h1>
+                    <p>{{complaint.description}}</p>
+                </div>
+            </div>
+
+            @if (complaint.status !== this.getEndStatus()) {
+                <p-button label="Progresar" (onClick)="this.progressComplaint()" [loading]="this.loading()"></p-button>
+            }
+        </div>
+        }
+</div>

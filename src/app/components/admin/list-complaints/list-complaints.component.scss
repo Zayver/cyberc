@@ -1,1 +1,6 @@
 @use "styles/wrapper.scss";
+@use "styles/complaint-badges.scss";
+
+.title{
+    @apply font-bold text-2xl;
+}

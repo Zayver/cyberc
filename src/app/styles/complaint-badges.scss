@@ -1,0 +1,17 @@
+@mixin status($bgcolor, $color){
+    @apply p-2 font-bold rounded-2xl;
+    background-color: $bgcolor;
+    color: $color
+}
+
+.created{
+    @include status(#eed20033, #EED200)
+}
+
+.in-process{
+    @include status(#00EE0C33, #00EE0C)
+}
+
+.finalized{
+    @include status(#d74f1a33, #d74f1a)
+}

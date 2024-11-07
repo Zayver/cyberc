@@ -1,3 +1,5 @@
+import { ComplaintType } from "@model/constants/complaint-types"
+
 export interface CreateComplaintRequest {
     name: string
     secondName: string
@@ -7,4 +9,5 @@ export interface CreateComplaintRequest {
     email: string
     cc: string
     description: string
+    type: ComplaintType
 }

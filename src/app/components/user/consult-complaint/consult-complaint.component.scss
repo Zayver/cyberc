@@ -1,0 +1,53 @@
+@use "styles/wrapper.scss";
+@use "styles/complaint-badges.scss";
+
+.card {
+    @apply flex flex-col gap-2 p-3 shadow-lg rounded-lg md:w-[80%] w-full items-center;
+
+    p-inputMask {
+        @apply w-96;
+    }
+
+    form {
+        @apply flex gap-2;
+    }
+
+    .complaint-info {
+        @apply grid gap-2 grid-cols-1 md:grid-cols-2 text-left;
+
+        .alone {
+            @apply gap-3 justify-self-center items-center;
+            grid-column: 1/-1;
+        }
+
+        .type{
+            @apply shadow-md rounded-sm p-2;
+        }
+
+        .status{
+            @apply flex gap-2;
+        }
+
+        .info-item {
+            @apply flex flex-col gap-2;
+            h1 {
+                @apply font-bold text-lg;
+            }
+        }
+
+        .description {
+            @extend .info-item;
+            @apply items-start w-full;
+
+            p {
+                overflow-wrap: anywhere;
+            }
+        }
+    }
+}
+
+::ng-deep {
+    input {
+        @apply w-full;
+    }
+}

@@ -3,5 +3,5 @@ footer{
 }
 
 .footer{
-    @apply flex flex-col gap-2 justify-center text-center text-[var(--text-color-secondary)];
+    @apply flex flex-col gap-2 justify-center text-center text-gray-800 font-bold;
 }

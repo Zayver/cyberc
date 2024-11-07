@@ -1,8 +1,12 @@
 <header>
-    <h1>LOGO_TEMP</h1>
+    <div class="img" [routerLink]="['/']">
+        <img src="logo.svg" alt="LOGO PROJECT LAW">
+    </div>
     <div class="links">
-        @if (this.isLogged) {
+        @if (!this.isLogged) {
+            <p-button label="Iniciar" [routerLink]="['/login']"></p-button>
+        }@else {
+            <p-button label="Salir" (onClick)="this.logout()"></p-button>
         }
-        <a class=""[routerLink]="['login']">Iniciar</a>
     </div>
 </header>

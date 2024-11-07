@@ -1,23 +1,41 @@
 <div class="wrapper">
-    <h1>Listado de denuncias</h1>
-
+    <h1 class="title">Listado de denuncias</h1>
+    <input type="text" placeholder="Buscar por cédula" pInputText [formControl]="this.search" pKeyFilter="num">
     @if (this.complaints$ | async; as complaints) {
-    <p-table [value]="complaints" [paginator]="true" [rows]="6">
+    <p-table class="w-full" [value]="complaints.complaints" styleClass="p-datatable-striped" [paginator]="true"
+        [rows]="this.rows()" [first]="this.first()" [lazy]="true" [rowsPerPageOptions]="[10, 25 ,50, 100]" [rowHover]="true"
+        [showCurrentPageReport]="true" currentPageReportTemplate="{currentPage} de {totalPages}" [showJumpToPageInput]="true"
+        [lazyLoadOnInit]="false" [totalRecords]="complaints.total" (onLazyLoad)="this.lazyTable($event)">
+
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="5" class="text-center">No se han encontrado denuncias</td>
+            </tr>
+        </ng-template>
         <ng-template pTemplate="header">
             <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>CC</th>
+                <th>Tipo</th>
+                <th>Estado</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-complaint>
-            <tr>
+            <tr class="cursor-pointer" [routerLink]="[complaint.id]">
                 <td>{{complaint.name}}</td>
                 <td>{{complaint.surName}}</td>
                 <td>{{complaint.cc}}</td>
+                <td>{{this.getDisplay(complaint.type)}}</td>
+                @let status = this.getComplaintStatus(complaint.status);
+                <td><span [ngClass]="status.class">
+                    {{status.display}}
+                </span></td>
             </tr>
         </ng-template>
     </p-table>
 
+    }@else {
+        <p-progressSpinner ariaLabel="loading" />
     }
 </div>
