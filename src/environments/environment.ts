@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: "https://shark-app-pcxyq.ondigitalocean.app/api/v1" 
+    apiUrl: "https://urchin-app-zlaa9.ondigitalocean.app/api/v1" 
 };
